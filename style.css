@@ -1,0 +1,33 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* 自動填充列 */
+  grid-auto-rows: 10px; /* 每一行的基本高度 */
+  gap: 10px; /* 項目之間的間距 */
+  padding: 10px; /* 容器內的間距 */
+}
+
+.grid-item {
+  background-color: #4CAF50;
+  color: white;
+  border-radius: 5px;
+  padding: 20px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+ 
+}
+
+/* 不同高度的樣式 */
+.grid-item:nth-child(odd) {
+  grid-row: span 15; /* 奇數項目佔15行 */
+}
+
+.grid-item:nth-child(even) {
+  grid-row: span 10; /* 偶數項目佔10行 */
+}

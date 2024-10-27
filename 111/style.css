@@ -1,0 +1,192 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  max-width: 1200px;
+  padding-top:100px ;
+  margin: 0; /* 確保沒有額外的 margin */
+}
+
+.topich2 {
+  margin-left: 60px;
+  width: 100%; /* 確保容器佔滿整個寬度 */
+  text-align: left; /* 使文字左對齊 */
+}
+
+.topich2 h2 {
+  font-size: 1.8em;
+  font-weight: bold;
+  color: #333;
+
+}
+
+.topich2 h2::before {
+  content: "";
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-left: 25px solid #fdb913;
+  border-right: 15px solid transparent;
+  border-bottom: 30px solid transparent; /* 黄色三角形颜色 */
+  margin-left: -2px;
+}
+
+
+
+
+.sec{
+  display: flex;
+
+  width: 100%; 
+  margin-top: 15px;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.left {
+  display: grid;
+  grid-template-columns: 230px 230px 230px;
+  grid-template-rows: auto;
+  gap: 15px;
+  position: relative; /* 父容器設為 relative */
+  
+}
+.grid-left-item::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.2); /* 透明黑色效果 */
+  filter: grayscale(100%); /* 灰階效果 */
+  pointer-events: none; /* 讓疊加層不影響點擊 */
+  z-index: -1;
+}
+.grid-left-item {
+  background-color: #fa0;
+  color: white;
+  border-radius: 10px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden; /* 隱藏超出範圍的內容 */
+}
+
+.grid-left-item img{
+  width: 100%;
+  height: 100%;
+  display: block; /* 確保圖片不受其他元素影響 */
+  z-index: 0;
+  object-fit: cover;
+}
+
+
+/* 設定文字絕對定位 */
+.text-overlay {
+  position: absolute;
+  bottom: 10px; /* 可依需求調整 */
+  left: 10px; /* 可依需求調整 */
+  color: white;
+  font-weight: bold;
+  padding: 5px;
+  font-size: 14px; /* 可根據需求調整 */
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.3) ;
+}
+
+.text-overlay1{
+  padding-top: 5px;
+  color: black;
+  font-weight: bold;
+  text-align: left;
+}
+
+.grid-left-item:nth-child(1) {
+  height: 340px;
+  grid-row: span 2;
+}
+
+.grid-left-item:nth-child(2) {
+  height: 220px;
+}
+
+.grid-left-item:nth-child(3),
+.grid-left-item:nth-child(4) {
+  height: 105px;
+}
+
+.grid-left-item:nth-child(5) {
+ width: 230px;
+  height: 220px;
+  position: absolute; /* 使用絕對定位 */
+  top: 119px; /* 調整 top 值使其位於第 3 項的正下方 */
+  left: 490px; /* 調整 left 值使其對齊第 3 項所在列 */
+}
+
+.right{
+  margin-left: 10px;
+  display: grid;
+  grid-template-columns: 245px 110px;
+  grid-template-rows: 80px 70px 70px 70px;
+  row-gap: 15px;
+  margin-left: 15px;
+  position: relative; /* 父容器設為 relative */
+
+}
+
+.grid-right-item:nth-child(2),
+.grid-right-item:nth-child(4),
+.grid-right-item:nth-child(6),
+.grid-right-item:nth-child(8) {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  white-space: nowrap; /* 防止文本換行 */
+  text-overflow: ellipsis; /* 末尾省略號 */
+  overflow: hidden; /* 隱藏超出範圍的內容 */
+}
+
+.grid-right-item {
+  background-color:#fafafa;
+  box-shadow: 0.5px 0.5px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  overflow: hidden; /* 隱藏超出範圍的內容 */
+}
+
+.grid-right-item:hover{
+  background-color: #edecec;
+  cursor: pointer;
+}
+
+.text-overlay1:hover{
+  color: green;
+}
+
+.grid-right-item:nth-child(2),
+.grid-right-item:nth-child(4),
+.grid-right-item:nth-child(6),
+.grid-right-item:nth-child(8) {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  overflow: hidden; /* 隱藏超出範圍的內容 */
+}
+
+.grid-right-item:nth-child(1),
+.grid-right-item:nth-child(3),
+.grid-right-item:nth-child(5),
+.grid-right-item:nth-child(7) {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+ 
+}
+
+.grid-right-item img{
+  width: 110px;
+  height: 80px;
+  
+}
